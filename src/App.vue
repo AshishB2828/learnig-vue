@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link :to="{ name: 'event-list'}">Events</router-link> |
-      <router-link :to="{ name: 'event-create'}">Create</router-link>
-    </nav>
+    <NavBar/>
     <router-view/>
   </div>
 </template>
 
+<script>
+import NavBar from "./components/NavBar.vue"
+export default {
+  components: {
+    NavBar
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -17,16 +22,24 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+ 
+}
+.shadow{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.event-link{
+    text-decoration: none;
+}
+#app{
+   background-color: rgb(229, 229, 248);
+   min-height: 100vh;
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+
 </style>
