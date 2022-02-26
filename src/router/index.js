@@ -8,6 +8,7 @@ import EventCreate from '../views/EventCreate.vue'
 Vue.use(VueRouter)
 
 const routes = [
+    
   {
     path: '/',
     name: 'event-list',
@@ -34,6 +35,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode:"history",
   routes
 })
 
