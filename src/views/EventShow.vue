@@ -7,12 +7,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
     props: ['id'],
     created(){
-        this.$store.dispatch("events/fecthEvent", this.id);
+        this.fecthEvent(this.id);
     },
-    computed:mapState({event: state => state.events.event})
+    computed:mapState({event: state => state.events.event}),
+    methods: mapActions("events", ['fecthEvent'])
 }
 </script>
