@@ -11,7 +11,7 @@ import { mapState } from 'vuex';
 export default {
     props: ['id'],
     created(){
-        this.$store.dispatch("fecthEvent", this.id);
+        this.$store.dispatch("events/fecthEvent", this.id);
     },
     computed:mapState({event: state => state.events.event})
 }

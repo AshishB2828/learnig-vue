@@ -1,5 +1,7 @@
 import EventServices from "../../services/EventServices";
 
+export const namespaced = true;
+
 export const state = {
     user: { id: 'abcdfg', name:"Afsal"},
     events:[],

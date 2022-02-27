@@ -33,7 +33,7 @@ export default {
     components: {EventCard},
     
     created(){
-        this.$store.dispatch("fecthEvents",{perPage: 3, page: this.page})
+        this.$store.dispatch("events/fecthEvents",{perPage: 3, page: this.page})
     },
     computed: {
         page(){

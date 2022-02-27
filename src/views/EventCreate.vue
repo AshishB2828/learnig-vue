@@ -67,7 +67,7 @@ export default {
         },
         createEvent(){
             this.event.attendies = [...this.attendies.split(",")]
-            this.$store.dispatch('createEvent', this.event)
+            this.$store.dispatch('events/createEvent', this.event)
             .then(()=>{
                 this.$router.push({
                     name: 'event-show',
