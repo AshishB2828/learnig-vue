@@ -4,7 +4,7 @@
         <div class="event__details">
             <span class="time">@{{ event.time }} on {{ event.date }}</span>
             <h4 class="title">{{event.title}}</h4>
-            <span class="attendence"><span >{{ event.attendees.length }}</span> attending</span>
+            <span class="attendence"><span >{{ event.attendies.length }}</span> attending</span>
         </div>
         <div class="event-sidebox1">
             <div class="event-sidebox1-inner">

@@ -2,24 +2,17 @@
     <div>
         <h3>{{event.title}}</h3>
         <p>@ {{ event.time }} on {{ event.date }}</p>
-        <p>{{ event.attendees ? event.attendees.length:"" }} attending</p>
+        <p>{{ event.attendies ? event.attendies.length:"" }} attending</p>
     </div>
 </template>
 
 <script>
-import api from "../services/EventServices";
-
+import { mapState } from 'vuex';
 export default {
     props: ['id'],
-    data(){
-        return{
-            event:{}
-        }
-    },
     created(){
-        api.getEvent(this.id)
-        .then(({data}) => this.event = data)
-        .catch(err => console.log(err))
-    }
+        this.$store.dispatch("fecthEvent", this.id);
+    },
+    computed:mapState({event: "event"})
 }
 </script>
