@@ -13,6 +13,6 @@ export default {
     created(){
         this.$store.dispatch("fecthEvent", this.id);
     },
-    computed:mapState({event: "event"})
+    computed:mapState({event: state => state.events.event})
 }
 </script>

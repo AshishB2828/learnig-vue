@@ -4,7 +4,7 @@
         <br>
         <div>
         <EventCard
-            v-for="event in events" 
+            v-for="event in events.events" 
             :key="event.id"
             :event = "event"
             style="margin: 0px 10px"
@@ -40,10 +40,9 @@ export default {
             return parseInt(this.$route.query.page) || 1;
         },
         isNextPage(){
-            return this.page * 3 <  parseInt(this.total);
+            return this.page * 3 <  parseInt(this.events.totalEvents);
         },
         ...mapState(['events']),
-        ...mapState({total: 'totalEvents'})
         }
     }
 </script>
